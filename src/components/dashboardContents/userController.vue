@@ -158,8 +158,7 @@
                 this.$http.post(uri, this.user).then(response => {
                     this.snackbar = true; //mengaktifkan snackbar
                     this.color = 'green'; //memberi warna snackbar
-                    this.text = response.data.message; //memasukkan pesan ke snackba
-                    r
+                    this.text = response.data.message; //memasukkan pesan ke snackbar
                     this.load = false;
                     this.dialog = false
                     this.getData(); //mengambil data user
@@ -201,8 +200,8 @@
             setForm() {
                 if (this.typeInput === 'new') {
                     this.sendData()
-                } else {
-                    console.log("dddd")
+                }else {
+                    
                     this.updateData()
                 }
             },
