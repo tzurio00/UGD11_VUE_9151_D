@@ -57,13 +57,20 @@
                 items: [{
                     title: 'User Controller',
                     icon: 'mdi-human-male',
-                    to: "/"
+                    to: "/user"
                 },
                 { title: 'Service Controller', 
                 icon: 'mdi-wrench', 
-                to:"/service" 
+                to:"/services" 
                 }, ],
             }
         },
+        methods: {
+            logout()
+            {
+                localStorage.removeItem("token")
+                this.$router.push({name : "loginLayout"})
+            }
+        }   
     } 
 </script>

@@ -121,12 +121,17 @@
             }
         },
         methods: {
-            getData() {
-                var uri = this.$apiUrl + '/user'
-                this.$http.get(uri).then(response => {
-                    this.users = response.data.message
-                })
-            },
+            getData(){
+            var config = {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                }
+            }             
+            var uri = this.$apiUrl + '/user'             
+            this.$http.get(uri,config).then(response =>{                 
+                this.users=response.data.message             
+            })               
+        },      
             sendData() {
                 this.user.append('name', this.form.name);
                 this.user.append('email', this.form.email);
